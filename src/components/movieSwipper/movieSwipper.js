@@ -9,7 +9,7 @@ function MovieSwipper({popularMovies}) {
     return (
         <div className='movieSwipper'>
         <Swiper
-            slidesPerView={5}
+            slidesPerView={7}
             spaceBetween={20}
             scrollbar={{
                 hide: true,

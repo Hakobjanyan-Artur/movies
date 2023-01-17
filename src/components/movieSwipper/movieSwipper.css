@@ -2,7 +2,8 @@
     margin-top: 50px;
 }
 .movieItem .item-container {
-    height: 500px;
+    width: 150px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -10,14 +11,17 @@
     cursor: pointer;
 }
 .item-container-img {
+    width: 150px;
+    height: 300px;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
 }
+.item-container-img{
+    height: 300px;
+}
 .item-container-img img {
     border-radius: 20px;
-    width: 200px;
-    height: 300px;
 }
 .item-rating {
     width: 40px;

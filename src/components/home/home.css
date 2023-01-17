@@ -40,3 +40,10 @@
     left: 90px;
     transition: .5s;
 }
+.home-section {
+    margin: 50px 0;
+}
+.home-section .home-section-title {
+    font-family: var(--roboto);
+    color: var(--navColor);
+}

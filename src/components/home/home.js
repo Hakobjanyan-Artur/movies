@@ -1,8 +1,9 @@
 import { useRef, useState } from 'react'
 import MovieSwipper from '../movieSwipper/movieSwipper'
+import PersoneSwiper from '../personeSwiper/personeSwiper'
 import './home.css'
 
-function Home({popularMovies}) {
+function Home({popularMovies, popularPersone}) {
     const inputTvRef = useRef(null)
     const [inputColor, setInputColor] = useState(false)
     const toggleTv = () => {
@@ -42,6 +43,14 @@ function Home({popularMovies}) {
                 </div>
                 <div className='movies-section'>
                   <MovieSwipper popularMovies={popularMovies} />              
+                </div>
+                <div className='home-section'>
+                    <div className='home-section-title'>
+                        <h2>Popular Persons Today</h2>
+                    </div>
+                    <div className='persone-section'>
+                        <PersoneSwiper popularPersone={popularPersone} />
+                    </div>
                 </div>
             </div>
         </div>
