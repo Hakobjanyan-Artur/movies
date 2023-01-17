@@ -1,0 +1,42 @@
+.home .container .home-header {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--roboto);
+}
+.home .container .home-header .home-header-title h5 {
+    color: var(--navColor);
+}
+.home .container .home-header .tv-teater-input {
+    cursor: pointer;
+}
+.home .container .home-header .tv-teater-input .input-container {
+    width: 220px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--navColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.home .container .home-header .tv-teater-input .input-container .input-container-dropBack {
+    width: 110px;
+    height: 30px;
+    background: var(--navColor);
+    border-radius: 20px;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    transition: .5s;
+}
+.input-left {
+    width: 130px;
+    height: 30px;
+    background: var(--navColor);
+    border-radius: 20px;
+    position: absolute;
+    z-index: -1;
+    left: 90px;
+    transition: .5s;
+}

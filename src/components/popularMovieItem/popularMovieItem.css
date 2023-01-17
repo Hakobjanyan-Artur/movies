@@ -1,0 +1,21 @@
+.item-container-img {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.item-rating {
+    width: 30px;
+    height: 30px;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translate(10px, -40px);
+    background: #000;
+    color: #fff;
+}
+.item-date {
+    color: #8C8C8C;
+}
