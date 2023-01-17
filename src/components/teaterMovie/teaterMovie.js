@@ -1,23 +1,22 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Scrollbar } from "swiper";
-import './movieSwipper.css'
 import "swiper/css";
 import "swiper/css/scrollbar";
+import './teaterMovie.css'
 
-
-function MovieSwipper({popularMovies}) {
+function TeaterMovie({teaterMovies}) {
     return (
-        <div className='movieSwipper'>
-        <Swiper
-            slidesPerView={7}
-            spaceBetween={20}
-            scrollbar={{
-                hide: true,
-              }}
-              modules={[Scrollbar]}
-            className="mySwiper"
-            >
-                {popularMovies.map(movies => (
+        <div className='teaterMovie'>
+            <Swiper
+                slidesPerView={7}
+                spaceBetween={20}
+                scrollbar={{
+                    hide: true,
+                }}
+                modules={[Scrollbar]}
+                className="mySwiper"
+                >
+                {teaterMovies.map(movies => (
                     <SwiperSlide key={movies.id}>
                         <div className="movieItem">
                             <div className="item-container">
@@ -44,9 +43,9 @@ function MovieSwipper({popularMovies}) {
                         </div>
                     </SwiperSlide>
                 ))}
-        </Swiper>
+            </Swiper>
         </div>
     )
 }
 
-export default MovieSwipper
+export default TeaterMovie

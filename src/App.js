@@ -10,6 +10,7 @@ import HomeWrapper from './pages/homeWrapper';
 function App() {
     const [popularMovies, setPopularMovies] = useState([])
     const [popularPersone, setPopularPersone] = useState([])
+    const [teaterMovies, setTeaterMovies] = useState([])
 
     const fetchMovies = async() => {
     // popularMovies  
@@ -38,6 +39,19 @@ function App() {
       img: persone.profile_path
     }))
     setPopularPersone([...popularPersoneData])
+    // teater movies
+    const responseTeaterMovies = await axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=f9fd8699f04bbaf7bf3c77275c0981c9')
+    const teaterMovies = responseTeaterMovies.data.results
+    const teaterMovieData = teaterMovies.map((movie) => ({
+      id: movie.id,
+      backDrop: movie.backdrop_path,
+      poster: movie.poster_path,
+      title: movie.name,
+      data_release: movie.first_air_date,
+      about: movie.overview,
+      rating: movie.vote_average
+    }))
+    setTeaterMovies([...teaterMovieData])
     }
 
     useEffect(() => {
@@ -48,7 +62,7 @@ function App() {
     <div className="app">
       <Routes>
         <Route path='/' element={<HomeWrapper />}>
-          <Route index element={< Home popularPersone={popularPersone} popularMovies={popularMovies}/>}/>
+          <Route index element={< Home teaterMovies={teaterMovies} popularPersone={popularPersone} popularMovies={popularMovies}/>}/>
         </Route>
       </Routes>
     </div>

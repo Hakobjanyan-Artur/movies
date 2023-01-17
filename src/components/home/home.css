@@ -40,10 +40,23 @@
     left: 90px;
     transition: .5s;
 }
+.none {
+    display: none;
+}
 .home-section {
     margin: 50px 0;
 }
 .home-section .home-section-title {
     font-family: var(--roboto);
     color: var(--navColor);
+}
+.teater {
+    display: none;
+    margin: 50px 0;
+}
+.block {
+    display: block;
+}
+.teater-section {
+    margin-top: 50px;
 }
