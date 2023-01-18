@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/home/home';
+import UniqMovies from './components/uniqMovie/uniqMovie';
+import UniqMoviesTeater from './components/uniqMoviesTeater/uniqMoviesTeater';
+import UniqPersone from './components/uniqPersone/uniqPersone';
 import HomeWrapper from './pages/homeWrapper';
 
 
@@ -50,7 +53,7 @@ function App() {
       title: movie.name,
       data_release: movie.first_air_date,
       about: movie.overview,
-      rating: movie.vote_average
+      rating: Math.floor(movie.vote_average)
     }))
     setTeaterMovies([...teaterMovieData])
     // teater person
@@ -63,7 +66,9 @@ function App() {
       popularity: Math.floor(persone.popularity),
       img: persone.profile_path
     }))
+
     setTeaterPersone([...teaterPersoneData])
+
     }
 
     useEffect(() => {
@@ -75,6 +80,15 @@ function App() {
       <Routes>
         <Route path='/' element={<HomeWrapper />}>
           <Route index element={< Home teaterPersone={teaterPersone} teaterMovies={teaterMovies} popularPersone={popularPersone} popularMovies={popularMovies}/>}/>
+          <Route path='movies'>
+            <Route path=':id' element={<UniqMovies />} />
+          </Route>
+          <Route path='persone'>
+            <Route path=':id' element={<UniqPersone />} />
+          </Route>
+          <Route path='moviesTeater'>
+            <Route path=':id' element={<UniqMoviesTeater />} />
+          </Route>
         </Route>
       </Routes>
     </div>

@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react'
+import { memo, useRef, useState } from 'react'
 import MovieSwipper from '../movieSwipper/movieSwipper'
 import PersoneSwiper from '../personeSwiper/personeSwiper'
-import TeaterMovie from '../teaterMovie/teaterMovie'
+import TeaterMovieSwiper from '../teaterMovieSwiper/teaterMovieSwiper'
 import TeaterPersoneSwiper from '../teaterPersoneSwiper/teaterPersoneSwiper'
 import './home.css'
 
-function Home({popularMovies, popularPersone, teaterMovies, teaterPersone}) {
+function Home({popularMovies, popularPersone, teaterMovies, teaterPersone, setMoviesId}) {
     const moviesRef = useRef(null)
     const teaterRef = useRef(null)
     const personeRef = useRef(null)
@@ -22,7 +22,6 @@ function Home({popularMovies, popularPersone, teaterMovies, teaterPersone}) {
         personeRef.current.classList.toggle('none')
         teaterPersoneRef.current.classList.toggle('block')
     }
-
     return (
         <div className='home'>
             <div className='container'>
@@ -54,11 +53,11 @@ function Home({popularMovies, popularPersone, teaterMovies, teaterPersone}) {
                 </div>
                 <div className='movies'>
                     <div ref={moviesRef} className='movies-section'>
-                        <MovieSwipper popularMovies={popularMovies} />              
+                        <MovieSwipper setMoviesId={setMoviesId} popularMovies={popularMovies} />              
                     </div>
                     <div ref={teaterRef} className='teater'>
                         <div className='teater-movie-section'>
-                            <TeaterMovie teaterMovies={teaterMovies} />
+                            <TeaterMovieSwiper teaterMovies={teaterMovies} />
                         </div>
                     </div>
                     <div className='home-section'>
@@ -80,4 +79,4 @@ function Home({popularMovies, popularPersone, teaterMovies, teaterPersone}) {
     )
 }
 
-export default Home
+export default memo(Home)

@@ -3,8 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
+import { useNavigate } from 'react-router-dom';
 
 function TeaterPersoneSwiper({teaterPersone}) {
+    const navigate = useNavigate()
+
     return (
         <div className='teater-persone-swiper'>
         <Swiper
@@ -18,7 +21,7 @@ function TeaterPersoneSwiper({teaterPersone}) {
             >
                 {teaterPersone?.map(persone => (
                     <SwiperSlide key={persone.id}>
-                        <div className='persone-item-container'>
+                        <div onClick={() => navigate(`/persone/${persone.id}`)} className='persone-item-container'>
                             <div className='persone-item-img'>
                                 <img src={`https://image.tmdb.org/t/p/w200/${persone.img}`} alt="" />
                                 <div 

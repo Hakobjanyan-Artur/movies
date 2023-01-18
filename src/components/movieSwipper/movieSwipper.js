@@ -3,9 +3,12 @@ import { Scrollbar } from "swiper";
 import './movieSwipper.css'
 import "swiper/css";
 import "swiper/css/scrollbar";
+import { useNavigate } from "react-router-dom";
 
 
-function MovieSwipper({popularMovies}) {
+function MovieSwipper({popularMovies, setMoviesId}) {
+    const navigate = useNavigate()
+
     return (
         <div className='movieSwipper'>
         <Swiper
@@ -20,7 +23,7 @@ function MovieSwipper({popularMovies}) {
                 {popularMovies.map(movies => (
                     <SwiperSlide key={movies.id}>
                         <div className="movieItem">
-                            <div className="item-container">
+                            <div onClick={() => navigate(`/movies/${movies.id}`)} className="item-container">
                                 <div className="item-container-img">
                                     <img src={`https://image.tmdb.org/t/p/w200/${movies.poster}`} alt="" />
                                     <div

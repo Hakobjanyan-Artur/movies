@@ -2,6 +2,10 @@
     font-family: 'Roboto';
     src: url(./fonts/Roboto-Regular.ttf);
 }
+@font-face {
+    font-family: 'Inter';
+    src: url(./fonts/Inter-Regular.ttf);
+}
 * {
     margin: 0;
     padding: 0;
@@ -22,5 +26,6 @@ img {
 }
 :root {
     --navColor: #032541;
-    --roboto: 'Roboto'
+    --roboto: 'Roboto';
+    --inter: 'Inter'
 }

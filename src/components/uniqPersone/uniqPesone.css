@@ -1,0 +1,35 @@
+.uniq-persone {
+    margin-top: 30px;
+} 
+.uniq-persone .container {
+    display: flex;
+    justify-content: space-around;
+    font-family: var(--inter);
+}
+.uniq-persone .container .container-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.uniq-persone .container .container-left .uniq-persone-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.uniq-persone .container .container-right {
+    max-width: 850px;
+}
+.uniq-persone .container .container-right .pesone-biography {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.uniq-persone-img {
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+}

@@ -2,9 +2,12 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import './teaterMovie.css'
+import './teaterMovieSwiper.css'
+import { useNavigate } from "react-router-dom";
 
-function TeaterMovie({teaterMovies}) {
+function TeaterMovieSwiper({teaterMovies}) {
+    const navigate = useNavigate()
+
     return (
         <div className='teaterMovie'>
             <Swiper
@@ -19,7 +22,7 @@ function TeaterMovie({teaterMovies}) {
                 {teaterMovies.map(movies => (
                     <SwiperSlide key={movies.id}>
                         <div className="movieItem">
-                            <div className="item-container">
+                            <div onClick={() => navigate(`/moviesteater/${movies.id}`)} className="item-container">
                                 <div className="item-container-img">
                                     <img src={`https://image.tmdb.org/t/p/w200/${movies.poster}`} alt="" />
                                     <div
@@ -48,4 +51,4 @@ function TeaterMovie({teaterMovies}) {
     )
 }
 
-export default TeaterMovie
+export default TeaterMovieSwiper
