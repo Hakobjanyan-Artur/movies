@@ -2,11 +2,14 @@ import { useRef, useState } from 'react'
 import MovieSwipper from '../movieSwipper/movieSwipper'
 import PersoneSwiper from '../personeSwiper/personeSwiper'
 import TeaterMovie from '../teaterMovie/teaterMovie'
+import TeaterPersoneSwiper from '../teaterPersoneSwiper/teaterPersoneSwiper'
 import './home.css'
 
-function Home({popularMovies, popularPersone, teaterMovies}) {
+function Home({popularMovies, popularPersone, teaterMovies, teaterPersone}) {
     const moviesRef = useRef(null)
     const teaterRef = useRef(null)
+    const personeRef = useRef(null)
+    const teaterPersoneRef = useRef(null)
     const inputTvRef = useRef(null)
     const [inputColor, setInputColor] = useState(false)
 
@@ -16,6 +19,8 @@ function Home({popularMovies, popularPersone, teaterMovies}) {
         setInputColor(!inputColor)
         moviesRef.current.classList.toggle('none')
         teaterRef.current.classList.toggle('block')
+        personeRef.current.classList.toggle('none')
+        teaterPersoneRef.current.classList.toggle('block')
     }
 
     return (
@@ -47,23 +52,28 @@ function Home({popularMovies, popularPersone, teaterMovies}) {
                         </div>
                     </div>
                 </div>
-                <div ref={moviesRef} className='movies'>
-                    <div className='movies-section'>
+                <div className='movies'>
+                    <div ref={moviesRef} className='movies-section'>
                         <MovieSwipper popularMovies={popularMovies} />              
+                    </div>
+                    <div ref={teaterRef} className='teater'>
+                        <div className='teater-movie-section'>
+                            <TeaterMovie teaterMovies={teaterMovies} />
+                        </div>
                     </div>
                     <div className='home-section'>
                         <div className='home-section-title'>
                             <h2>Popular Persons Today</h2>
                         </div>
-                    <div className='persone-section'>
+                    <div ref={personeRef} className='persone-section'>
                         <PersoneSwiper popularPersone={popularPersone} />
                     </div>
-                </div>
-                </div>
-                <div ref={teaterRef} className='teater'>
-                    <div className='teater-movie-section'>
-                        <TeaterMovie teaterMovies={teaterMovies} />
+                    <div ref={teaterPersoneRef} className='teater'>
+                         <div className='teater-persone-section'>
+                              <TeaterPersoneSwiper teaterPersone={teaterPersone} />  
+                         </div>       
                     </div>
+                </div>
                 </div>
             </div>
         </div>

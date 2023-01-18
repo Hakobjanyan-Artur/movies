@@ -11,9 +11,10 @@ function App() {
     const [popularMovies, setPopularMovies] = useState([])
     const [popularPersone, setPopularPersone] = useState([])
     const [teaterMovies, setTeaterMovies] = useState([])
+    const [teaterPersone, setTeaterPersone] = useState([])
 
     const fetchMovies = async() => {
-    // popularMovies  
+    // popular Movies  
     const responsemovies = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=f9fd8699f04bbaf7bf3c77275c0981c9&language=en-US&page=1')
     const popularMovies = responsemovies.data.results
     const popularMovData = popularMovies.map((movies) => ({
@@ -27,7 +28,7 @@ function App() {
       rating: movies.vote_average
     })) 
     setPopularMovies([...popularMovData])
-    //polpularPerson
+    //polpular Person
     const responsePerson = await axios.get('https://api.themoviedb.org/3/trending/person/day?api_key=f9fd8699f04bbaf7bf3c77275c0981c9')
     const popularPersone = responsePerson.data.results
     popularPersone.length = 20
@@ -52,6 +53,17 @@ function App() {
       rating: movie.vote_average
     }))
     setTeaterMovies([...teaterMovieData])
+    // teater person
+    const responseTeaterPersone = await axios.get('https://api.themoviedb.org/3/trending/person/week?api_key=f9fd8699f04bbaf7bf3c77275c0981c9')
+    const teaterPersone = responseTeaterPersone.data.results
+    const teaterPersoneData = teaterPersone.map((persone) => ({
+      id: persone.id,
+      name: persone.name,
+      character: persone.known_for[0].title,
+      popularity: Math.floor(persone.popularity),
+      img: persone.profile_path
+    }))
+    setTeaterPersone([...teaterPersoneData])
     }
 
     useEffect(() => {
@@ -62,7 +74,7 @@ function App() {
     <div className="app">
       <Routes>
         <Route path='/' element={<HomeWrapper />}>
-          <Route index element={< Home teaterMovies={teaterMovies} popularPersone={popularPersone} popularMovies={popularMovies}/>}/>
+          <Route index element={< Home teaterPersone={teaterPersone} teaterMovies={teaterMovies} popularPersone={popularPersone} popularMovies={popularMovies}/>}/>
         </Route>
       </Routes>
     </div>
