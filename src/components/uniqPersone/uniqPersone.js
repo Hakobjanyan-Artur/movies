@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import UniqPersoneSwipe from '../uniqPersoneSwipe/uniqPersoneSwipe'
 import './uniqPesone.css'
 
 function UniqPersone() {
@@ -57,6 +58,12 @@ function UniqPersone() {
                         <div className='pesone-biography'>
                             <h2>Biography</h2>
                             <p>{uniqPersone?.biography}</p>
+                        </div>
+                        <div className='uniq-persone-swipe'>
+                            <div className='persone-swipe-title'>
+                                <h2>Known For</h2>
+                            </div>
+                            <UniqPersoneSwipe id={id} />
                         </div>
                 </div>
             </div>

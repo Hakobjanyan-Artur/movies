@@ -30,7 +30,7 @@ function Home({popularMovies, popularPersone, teaterMovies, teaterPersone, setMo
                         <h2>Popular Movies Today</h2>
                     </div>
                     <div
-                        onClick={toggleTv} 
+                        onClick={() => toggleTv()} 
                         className='tv-teater-input'>
                         <div className='input-container'>
                             <div className='input-container-left'>

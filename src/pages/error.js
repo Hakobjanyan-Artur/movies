@@ -1,8 +1,17 @@
+import { useNavigate } from 'react-router-dom'
 import './error.css'
 
 function Error() {
+    const navigate = useNavigate()
     return (
-        <h1>Error</h1>
+        <div className='error'>
+            <div className='container'>
+                <div className='buttons'>
+                    <button onClick={() => navigate('/')}>Home</button>
+                    <button onClick={() => navigate(-1)}>Back</button>
+                </div>
+            </div>
+        </div>
     )
 }
 

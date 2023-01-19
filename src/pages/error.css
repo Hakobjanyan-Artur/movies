@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+.error {
+    min-height: 100vh;
+    position: relative;
+}
+.error::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url('../error-img/error.jpg');
+    position: absolute;
+    background-size: cover;
+    background-position: inherit;
+    background-repeat: no-repeat;
+}
+.error .container .buttons {
+    position: absolute;
+    top: 100px;
+    left: 20%;
+    display: flex;
+    gap: 30px;
+}
+.error .container .buttons button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    background: #032541;
+    color: #fff;
+    box-shadow: 0 0 10px #032541;
+    transition: .4s;
+}
+.error .container .buttons button:hover {
+    background: #064579;
+}

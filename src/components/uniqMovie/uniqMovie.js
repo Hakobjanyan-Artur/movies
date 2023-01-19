@@ -1,14 +1,16 @@
 import axios from 'axios'
-import { memo, useEffect, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import UniqMoviePersonSwipe from '../uniqMoviesActorsSwipe/uniqMoviesActorsSwipe'
 import './uniqMovie.css'
+import UniqMovieTrailers from '../uniqMovietrailers/uniqMovieTrailers'
 
 function UniqMovies() {
     const {id} = useParams()
     const [uniqMovie, setUniqMovie] = useState(null)
     
     const fetchUniqMovies = async() => {
+        // uniqMovies
             const responseUniqMovies = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=f9fd8699f04bbaf7bf3c77275c0981c9&language=en-US`)
             const uniqMoviesData = responseUniqMovies.data
             const uniqMovies = {
@@ -19,13 +21,13 @@ function UniqMovies() {
               genres: uniqMoviesData.genres, // array
               overview: uniqMoviesData.overview,
               status: uniqMoviesData.status,
-              originalLanguage: uniqMoviesData.original_language,
+              originalLanguage: uniqMoviesData.original_language.toUpperCase(),
               budget: uniqMoviesData.budget,
               revenue: uniqMoviesData.revenue,
               backgruondImg: uniqMoviesData.backdrop_path,
               poster: uniqMoviesData.poster_path 
               }
-              setUniqMovie(uniqMovies)
+              setUniqMovie(uniqMovies) 
 
             }
             useEffect(() => {
@@ -33,7 +35,6 @@ function UniqMovies() {
                     fetchUniqMovies()
                 }
             }, [])
-            console.log(id);
 
     return(
         <div className='uniq-movies'>
@@ -54,7 +55,7 @@ function UniqMovies() {
                             </div>
                             <div className='header-data'>
                                 <span className='data'>{uniqMovie?.dataRelease}</span> |
-                                {uniqMovie?.genres.map(el => <span key={el.id}>{el.name}</span>)}
+                                {uniqMovie?.genres.map(el => <span key={el?.id}>{el?.name}</span>)}
 
                             </div>
                             <h3>Overview</h3>
@@ -91,6 +92,14 @@ function UniqMovies() {
                         </div>
                         <div className='section-actors-swipe'>
                             <UniqMoviePersonSwipe id={id} />
+                        </div>
+                    </div>
+                    <div className='section-videos'>
+                        <div className='section-videos-tltle'>
+                            <h2>Videos</h2>
+                        </div>
+                        <div className='section-videos-content'>
+                            <UniqMovieTrailers id={id} />
                         </div>
                     </div>
                 </div>

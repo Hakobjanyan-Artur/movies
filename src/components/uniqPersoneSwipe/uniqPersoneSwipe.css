@@ -1,0 +1,15 @@
+.uniq-p-swipe {
+    margin-bottom: 50px;
+}
+.uniq-p-swipe .uniq-p-pcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+}
+.uniq-p-swipe .uniq-p-pcontainer .item-p-img {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 150px;
+    height: 220px;
+}

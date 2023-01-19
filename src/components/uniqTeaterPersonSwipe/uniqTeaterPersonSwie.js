@@ -39,28 +39,30 @@ function UniqTeaterPersonSwipe({id}) {
                 hide: true,
               }}
               modules={[Scrollbar]}
-            className="mySwiper"
+            className="uniq-t-p-Sw"
             >
                 {uniqTeaterPerson?.map(persone => (
-                    <SwiperSlide key={persone.id}>
-                        <div className='persone-item-container'>
-                            <div className='persone-item-img'>
-                                <img src={`https://image.tmdb.org/t/p/w200/${persone?.poster}`} alt="" />
-                                <div 
-                                     style={{
-                                        border: persone?.popularity <= 20 ? '5px solid red' : persone?.popularity > 20 && persone?.popularity < 50 ? '5px solid yellow' : '5px solid green'
-                                    }} 
-                                    className='persone-item-rating'>
-                                    {persone?.popularity}
+                    <SwiperSlide key={persone?.id}>
+                        <div onClick={() => navigate(`/persone/${persone?.id}`)} className='uniq-t-p-container'>
+                            <div className='uniq-t-p-i'>
+                                <div className='uniq-t-p-img'>
+                                    <img src={`https://image.tmdb.org/t/p/w200/${persone?.poster}`} alt="" />
+                                    <div 
+                                        style={{
+                                            border: persone?.popularity <= 20 ? '5px solid red' : persone?.popularity > 20 && persone?.popularity < 50 ? '5px solid yellow' : '5px solid green'
+                                        }} 
+                                        className='uniq-t-p-rating'>
+                                        {persone?.popularity}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='persone-item-name'>
-                                <h4>{persone?.name}</h4>
-                            </div>
-                            <div className='persone-item-character'>
-                                <h5>
-                                    {persone?.character}
-                                </h5>
+                                <div className='uniq-t-p-name'>
+                                    <h4>{persone?.name}</h4>
+                                </div>
+                                <div className='uniq-t-p-character'>
+                                    <h5>
+                                        {persone?.character}
+                                    </h5>
+                                </div>
                             </div>
                         </div>
                     </SwiperSlide>

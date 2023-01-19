@@ -33,3 +33,9 @@
     border-radius: 20px;
     overflow: hidden;
 }
+.uniq-persone-swipe {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

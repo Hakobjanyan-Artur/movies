@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/home/home';
+import PersoneMovies from './components/personeMovies/personeMovies';
 import UniqMovies from './components/uniqMovie/uniqMovie';
 import UniqMoviesTeater from './components/uniqMoviesTeater/uniqMoviesTeater';
 import UniqPersone from './components/uniqPersone/uniqPersone';
+import Error from './pages/error';
 import HomeWrapper from './pages/homeWrapper';
 
 
@@ -38,7 +40,7 @@ function App() {
     const popularPersoneData = popularPersone.map((persone) => ({
       id: persone.id,
       name: persone.name,
-      character: persone.known_for[0].title,
+      // character: persone.known_for[0].title,
       popularity: Math.floor(persone.popularity),
       img: persone.profile_path
     }))
@@ -89,7 +91,11 @@ function App() {
           <Route path='moviesTeater'>
             <Route path=':id' element={<UniqMoviesTeater />} />
           </Route>
+          <Route path='personeMovies'>
+            <Route path=':id' element={<PersoneMovies />} />
+          </Route>
         </Route>
+        <Route path='*' element={< Error />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,77 @@
+.trailer-Sw {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.trailer-Sw::after {
+    content: "";
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 5px 0 20px #ffff, 10px 0 30px #ffff, 15px 0 25px #ffff;
+}
+.trailer-Sw::before {
+    content: "";
+    width:40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: -5px 0 20px #ffff, -10px 0 30px #ffff, -15px 0 25px #ffff;
+}
+.trailer-title {
+    text-align: center;
+    margin: 10px 0;
+}
+.trailer-video {
+    position: relative;
+}
+.trailer-video::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+.content-trailer{
+    width: 550px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.popup-hiden {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.695);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup {
+    display: none;
+}
+.popup-videos {
+    transform: scale(0);
+    transition: .7s;
+}
+.translate{
+    transform: scale(100%);
+}

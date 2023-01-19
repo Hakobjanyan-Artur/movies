@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import UniqTeaterMovieTrailers from '../uniqTeaterMovieTrailer/uniqTeaterMovieTrailer'
 import UniqTeaterPersonSwipe from '../uniqTeaterPersonSwipe/uniqTeaterPersonSwie'
 import './uniqMoviesTeater.css'
 
@@ -19,7 +20,7 @@ function UniqMoviesTeater() {
               genres: uniqMoviesData.genres, // array
               overview: uniqMoviesData.overview,
               status: uniqMoviesData.status,
-              originalLanguage: uniqMoviesData.original_language,
+              originalLanguage: uniqMoviesData.original_language.toUpperCase(),
               budget: uniqMoviesData.budget,
               revenue: uniqMoviesData.revenue,
               backgruondImg: uniqMoviesData.backdrop_path,
@@ -51,7 +52,7 @@ function UniqMoviesTeater() {
                             </div>
                             <div className='header-data'>
                                 <span className='data'>{uniqMovie?.dataRelease}</span> |
-                                {uniqMovie?.genres.map(el => <span key={el.id}>{el.name}</span>)}
+                                {uniqMovie?.genres.map(el => <span key={el?.id}>{el?.name}</span>)}
 
                             </div>
                             <h3>Overview</h3>
@@ -88,6 +89,14 @@ function UniqMoviesTeater() {
                         </div>
                         <div className='section-actors-swipe'>
                             <UniqTeaterPersonSwipe id={id} />
+                        </div>
+                    </div>
+                    <div className='section-videos'>
+                        <div className='section-videos-title'>
+                            <h2>Movie video</h2>
+                        </div>
+                        <div className='section-videos-swipe'>
+                            <UniqTeaterMovieTrailers id={id} />
                         </div>
                     </div>
                 </div>

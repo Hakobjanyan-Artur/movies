@@ -17,28 +17,30 @@ function TeaterPersoneSwiper({teaterPersone}) {
                 hide: true,
               }}
               modules={[Scrollbar]}
-            className="mySwiper"
+            className="teater-p-Sw"
             >
                 {teaterPersone?.map(persone => (
-                    <SwiperSlide key={persone.id}>
-                        <div onClick={() => navigate(`/persone/${persone.id}`)} className='persone-item-container'>
-                            <div className='persone-item-img'>
-                                <img src={`https://image.tmdb.org/t/p/w200/${persone.img}`} alt="" />
-                                <div 
-                                     style={{
-                                        border: persone.popularity <= 20 ? '5px solid red' : persone.popularity > 20 && persone.popularity < 50 ? '5px solid yellow' : '5px solid green'
-                                    }} 
-                                    className='persone-item-rating'>
-                                    {persone.popularity}
+                    <SwiperSlide key={persone?.id}>
+                        <div onClick={() => navigate(`/persone/${persone?.id}`)} className='teater-p-i-container'>
+                            <div className='teater-p-i'>
+                                <div className='teater-persone-item-img'>
+                                    <img src={`https://image.tmdb.org/t/p/w200/${persone?.img}`} alt="" />
+                                    <div 
+                                        style={{
+                                            border: persone?.popularity <= 20 ? '5px solid red' : persone?.popularity > 20 && persone?.popularity < 50 ? '5px solid yellow' : '5px solid green'
+                                        }} 
+                                        className='teater-p-i-rating'>
+                                        {persone?.popularity}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='persone-item-name'>
-                                <h4>{persone.name}</h4>
-                            </div>
-                            <div className='persone-item-character'>
-                                <h5>
-                                    {persone.character}
-                                </h5>
+                                <div className='teater-p-i-name'>
+                                    <h4>{persone?.name}</h4>
+                                </div>
+                                <div className='teater-p-i-character'>
+                                    <h5>
+                                        {persone?.character}
+                                    </h5>
+                                </div>
                             </div>
                         </div>
                     </SwiperSlide>
