@@ -53,8 +53,15 @@
 .teater-persone-item-img {
     width: 140px;
     height: 180px;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
+}
+.teater-persone-item-img img{
+    width: 140px;
+    height: 180px;
+    border-radius: 20px;
 }
 .teater-p-i-rating {
     width: 40px;
@@ -73,6 +80,8 @@
 .teater-p-i-name {
     text-align: center;
 }
-.teater-p-i-character {
-    text-align: center;
+@media(max-width: 390px) {
+    .teater-p-i-container {
+        transform: translateX(50%);
+    }
 }

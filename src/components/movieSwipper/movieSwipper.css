@@ -81,3 +81,8 @@
 .movie-item-date {
     text-align: center;
 }
+@media(max-width: 390px) {
+    .movieItem {
+        transform: translateX(40%);
+    }
+}

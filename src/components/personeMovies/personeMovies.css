@@ -1,3 +1,117 @@
+.p-u-header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    padding-top: 30px;
+    min-height: 450px;
+}
+.p-container-header {
+    display: flex;
+    gap: 100px;
+    color: #fff;
+    font-family: var(--inter);
+}
+.p-uniq-movies-header-left {
+    width: 200px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.p-uniq-movies-header-left img {
+    width: 100%;
+    height: 100%;
+}
+.p-uniq-movies-header-right {
+    width: 700px;
+}
+.p-header-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.p-header-data {
+    display: flex;
+    gap: 10px;
+}
+.p-header-status {
+    display: flex;
+    gap: 20px;
+}
+
 section {
     margin-bottom: 50px;
 }
+@media(max-width: 1000px) {
+    .p-u-header .container {
+         max-width: 950px;
+     }
+     .p-container-header {
+         gap: 100px;
+         max-width: 850px;
+     }
+ }
+ @media(max-width: 850px) {
+     .p-u-header .container {
+          max-width: 750px;
+      }
+      .p-container-header {
+          gap: 30px;
+          max-width: 650px;
+      }
+      .p-uniq-movies-header-right {
+         width: 500px;
+     }
+  }
+  @media(max-width: 650px) {
+     .p-u-header .container {
+          max-width: 550px;
+      }
+      .p-container-header {
+          flex-direction: column;
+          max-width: 450px;
+          align-items: center;
+      }
+      .p-uniq-movies-header-right {
+         width: 400px;
+     }
+  }
+  @media(max-width: 450px) {
+    .p-u-header .container {
+          max-width: 400px;
+      }
+      .p-container-header {
+          flex-direction: column;
+          max-width: 400px;
+          align-items: center;
+      }
+      .p-uniq-movies-header-right {
+         width: 400px;
+     }
+     .p-header-data {
+         flex-direction: column;
+     }
+     .p-header-title {
+         flex-direction: column;
+     }
+     .p-header-status {
+         flex-direction: column;
+     }
+  }
+  @media(max-width: 400px) {
+    .p-uniq-movies-header-right {
+         max-width: 350px;
+     }
+     .p-header-data {
+         flex-direction: column;
+         align-items: center;
+     }
+     .p-header-title {
+         flex-direction: column;
+         align-items: center;
+     }
+     .p-header-status {
+         flex-direction: column;
+         align-items: center;
+     }
+  }

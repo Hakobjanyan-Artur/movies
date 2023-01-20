@@ -53,9 +53,13 @@
 .uniq-persone-persone-item-img {
     width: 140px;
     height: 180px;
-    overflow: hidden;
     position: relative;
     border-radius: 20px;
+}
+.uniq-persone-persone-item-img img {
+    width: 140px;
+    height: 180px;
+    border-radius: 10px;
 }
 .uniq-persone-p-item-rating {
     width: 40px;
@@ -76,4 +80,9 @@
 }
 .uniq-persone-item-character {
     text-align: center;
+}
+@media(max-width: 390px) {
+    .uniq-pesone-item-container {
+        transform: translateX(50%);
+    }
 }

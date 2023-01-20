@@ -1,68 +1,113 @@
-.uniq-movies-teater .header {
+.uniq-movie-t-header {
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    background-position: center;
+   background-size: cover;
+   position: relative;
+   background-position: center;
+   padding-top: 30px;
+   min-height: 450px;
+}
+.uniq-movie-t-container-header {
+    display: flex;
+    gap: 100px;
+    color: #fff;
+    font-family: var(--inter);
+}
+.uniq-t-movies-header-left {
+    width: 200px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.uniq-movie-t-header-img {
+    width: 100%;
+    height: 100%;
+}
+.uniq-movies-t-header-right {
+    width: 700px;
+}
+.uniq-movie-t-header-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.uniq-movie-t-header-data {
+    display: flex;
+    gap: 10px;
+}
+.uniq-movie-t-header-status {
+    display: flex;
+    gap: 20px;
+}
+@media(max-width: 1000px) {
+    .uniq-movie-t-header .container {
+         max-width: 950px;
+     }
+     .uniq-movie-t-container-header {
+         gap: 100px;
+         max-width: 850px;
+     }
  }
- .uniq-movies-teater .header::before {
-     content: "";
-     width: 100%;
-     height: 100%;
-     position: absolute;
-     top: 0;
-     left: 0;
-     z-index: 0;
- }
- .uniq-movies-teater .header .container{
-     padding-top: 30px;
- }
- .uniq-movies-teater .header .container .container-header {
-     height: 400px;
-     width: 100%;
-     display: flex;
-     justify-content: space-around;
- }
- .uniq-movies-header-left {
-     width: 220px;
-     height: 350px;
-     border-radius: 10px;
-     overflow: hidden;
-     z-index: 9;
- }
- .uniq-movies-header-left img {
-     height: 350px;
- }
- .uniq-movies-header-right {
-     display: flex;
-     flex-direction: column;
-     gap: 20px;
-     max-width: 700px;
-     z-index: 9;
-     color: #fff;
-     font-family: var(--inter);
- }
- 
- .uniq-movies-header-right .header-status {
-     display: flex;
-     gap: 30px;
- } 
- .uniq-movies-header-right .header-title {
-     display: flex;
-     align-items: center;
-     gap: 20px;
- }
- .uniq-movies-header-right .header-title .year {
-     font-size: 30px;
- }
- .uniq-movies-header-right .header-data {
-     display: flex;
-     gap: 5px;
- }
- .uniq-movies-header-right .header-status-flex {
-     display: flex;
-     flex-direction: column;
-     gap: 5px;
- }
- section {
-     margin-top: 20px;
- }
+ @media(max-width: 850px) {
+     .uniq-movie-t-header .container {
+          max-width: 750px;
+      }
+      .uniq-movie-t-container-header {
+          gap: 30px;
+          max-width: 650px;
+      }
+      .uniq-movies-t-header-right {
+         width: 500px;
+     }
+  }
+  @media(max-width: 650px) {
+     .uniq-m-header .container {
+          max-width: 550px;
+      }
+      .uniq-m-container-header {
+          flex-direction: column;
+          max-width: 450px;
+          align-items: center;
+      }
+      .uniq-movies-t-header-right {
+         width: 400px;
+     }
+  }
+  @media(max-width: 450px) {
+    .uniq-movie-t-header .container {
+          max-width: 400px;
+      }
+      .uniq-movie-t-container-header {
+          flex-direction: column;
+          max-width: 400px;
+          align-items: center;
+      }
+      .uniq-movies-t-header-right {
+         width: 400px;
+     }
+     .uniq-movie-t-header-data {
+         flex-direction: column;
+     }
+     .uniq-movie-t-header-title {
+         flex-direction: column;
+     }
+     .uniq-movie-t-header-status {
+         flex-direction: column;
+     }
+  }
+  @media(max-width: 400px) {
+    .uniq-movies-t-header-right {
+         max-width: 350px;
+     }
+     .uniq-movie-t-header-data {
+         flex-direction: column;
+         align-items: center;
+     }
+     .uniq-movie-t-header-title {
+         flex-direction: column;
+         align-items: center;
+     }
+     .uniq-movie-t-header-status {
+         flex-direction: column;
+         align-items: center;
+     }
+  }

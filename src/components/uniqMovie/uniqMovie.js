@@ -42,42 +42,42 @@ function UniqMovies() {
                 style={{
                     backgroundImage: `linear-gradient(0deg, rgba(1, 25, 45, 0.6), rgba(1, 25, 45, 0.6)), url(https://image.tmdb.org/t/p/w200/${uniqMovie?.backgruondImg})`
                 }}
-                className='header'>    
+                className='uniq-m-header'>    
                 <div className='container'>
-                    <div className='container-header'>
-                        <div className='uniq-movies-header-left'>
-                            <img className='header-img' src={`https://image.tmdb.org/t/p/w200/${uniqMovie?.poster}`} alt="" />
+                    <div className='uniq-m-container-header'>
+                        <div className='uniq-m-header-left'>
+                            <img className='uniq-m-header-img' src={`https://image.tmdb.org/t/p/w200/${uniqMovie?.poster}`} alt="" />
                         </div>
-                        <div className='uniq-movies-header-right'>
-                            <div className='header-title'>
-                                <h1>{uniqMovie?.title}</h1> 
-                                <span className='year'>({uniqMovie?.dataYear})</span>
+                        <div className='uniq-m-header-right'>
+                            <div className='uniq-m-header-title'>
+                                <h2>{uniqMovie?.title}</h2> 
+                                <span className='uniq-m-header-year'>({uniqMovie?.dataYear})</span>
                             </div>
-                            <div className='header-data'>
-                                <span className='data'>{uniqMovie?.dataRelease}</span> |
+                            <div className='uniq-m-header-data'>
+                                <span className='data'>{uniqMovie?.dataRelease} |</span>
                                 {uniqMovie?.genres.map(el => <span key={el?.id}>{el?.name}</span>)}
 
                             </div>
                             <h3>Overview</h3>
-                            <div className='header-overview'>
+                            <div className='uniq-m-header-overview'>
                                 <p>{uniqMovie?.overview}</p>
                             </div>
-                            <div className='header-status'>
-                                <div className='status header-status-flex'>
-                                    <h3>Status</h3>
-                                    <h4>{uniqMovie?.status}</h4>
+                            <div className='uniq-m-header-status'>
+                                <div className='uniq-m-header-staus-status'>
+                                    <h4>Status</h4>
+                                    <h6>{uniqMovie?.status}</h6>
                                 </div>
                                 <div className='language'>
-                                    <h3>Original Language</h3>
-                                    <h4>{uniqMovie?.originalLanguage}</h4>
+                                    <h4>Original Language</h4>
+                                    <h6>{uniqMovie?.originalLanguage}</h6>
                                 </div>
                                 <div className='Budget'>
-                                    <h3>Budget</h3>
-                                    <h4>{uniqMovie?.budget}</h4>
+                                    <h4>Budget</h4>
+                                    <h6>{uniqMovie?.budget}</h6>
                                 </div>
                                 <div className='Revenue'>
-                                    <h3>Revenue</h3>
-                                    <h4>{uniqMovie?.revenue}</h4>
+                                    <h4>Revenue</h4>
+                                    <h6>{uniqMovie?.revenue}</h6>
                                 </div>
                             </div>
                         </div>

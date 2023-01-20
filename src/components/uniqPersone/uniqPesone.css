@@ -1,41 +1,42 @@
 .uniq-persone {
     margin-top: 30px;
-} 
+}
 .uniq-persone .container {
     display: flex;
-    justify-content: space-around;
-    font-family: var(--inter);
+    gap: 100px;
 }
-.uniq-persone .container .container-left {
+.uniq-p-container-left {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.uniq-persone .container .container-left .uniq-persone-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.uniq-persone .container .container-right {
-    max-width: 850px;
-}
-.uniq-persone .container .container-right .pesone-biography {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.uniq-persone-img {
-    width: 200px;
-    height: 300px;
+.uniq-p-persone-img {
+    width: 250px;
+    height: 350px;
     border-radius: 20px;
     overflow: hidden;
 }
-.uniq-persone-swipe {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.uniq-p-persone-img img {
+    width: 100%;
+    height: 100%;
+}
+.uniq-p-container-right {
+    max-width: 800px;
+}
+@media(max-width: 1200px) {
+    .uniq-p-container-right {
+        max-width: 600px;
+    }
+}
+@media(max-width: 995px) {
+    .uniq-p-container-right {
+        max-width: 500px;
+    }
+}
+@media(max-width: 950px) {
+    .uniq-persone .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }

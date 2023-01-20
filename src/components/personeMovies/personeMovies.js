@@ -37,32 +37,32 @@ function PersoneMovies() {
     }, [])
     
     return (
-        <div className='uniq-movies'>
+        <div className='p-uniq-movies'>
             <div
                 style={{
                     backgroundImage: `linear-gradient(0deg, rgba(1, 25, 45, 0.6), rgba(1, 25, 45, 0.6)), url(https://image.tmdb.org/t/p/w200/${personeMovies?.backgruondImg})`
                 }}
-                className='header'>    
+                className='p-u-header'>    
                 <div className='container'>
-                    <div className='container-header'>
-                        <div className='uniq-movies-header-left'>
+                    <div className='p-container-header'>
+                        <div className='p-uniq-movies-header-left'>
                             <img className='header-img' src={`https://image.tmdb.org/t/p/w200/${personeMovies?.poster}`} alt="" />
                         </div>
-                        <div className='uniq-movies-header-right'>
-                            <div className='header-title'>
+                        <div className='p-uniq-movies-header-right'>
+                            <div className='p-header-title'>
                                 <h1>{personeMovies?.title}</h1> 
-                                <span className='year'>({personeMovies?.dataYear})</span>
+                                <span className='p-year'>({personeMovies?.dataYear})</span>
                             </div>
-                            <div className='header-data'>
-                                <span className='data'>{personeMovies?.dataRelease}</span> |
+                            <div className='p-header-data'>
+                                <span className='p-data'>{personeMovies?.dataRelease}</span> |
                                 {personeMovies?.genres.map(el => <span key={el?.id}>{el?.name}</span>)}
 
                             </div>
                             <h3>Overview</h3>
-                            <div className='header-overview'>
+                            <div className='p-header-overview'>
                                 <p>{personeMovies?.overview}</p>
                             </div>
-                            <div className='header-status'>
+                            <div className='p-header-status'>
                                 <div className='status header-status-flex'>
                                     <h3>Status</h3>
                                     <h4>{personeMovies?.status}</h4>

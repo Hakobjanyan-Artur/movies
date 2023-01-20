@@ -53,8 +53,12 @@
 .persone-item-img {
     width: 140px;
     height: 180px;
-    overflow: hidden;
     position: relative;
+}
+.persone-item-img img {
+    width: 140px;
+    height: 180px;
+    border-radius: 20px;
 }
 .persone-item-rating {
     width: 40px;
@@ -75,4 +79,9 @@
 }
 .persone-item-character {
     text-align: center;
+}
+@media(max-width: 390px) {
+    .persone-item-container {
+        transform: translateX(50%);
+    }
 }

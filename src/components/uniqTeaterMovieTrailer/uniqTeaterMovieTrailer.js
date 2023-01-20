@@ -43,7 +43,16 @@ function UniqTeaterMovieTrailers({id}) {
                 </div>
             </div>
             <Swiper
-                slidesPerView={2}
+                 breakpoints={{
+                    940: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    1200: {
+                        slidesPerView: 2,
+                        spaceBetween: 25,
+                    }
+                }}
                 scrollbar={{
                     hide: true,
                 }}

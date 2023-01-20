@@ -11,8 +11,28 @@ function TeaterPersoneSwiper({teaterPersone}) {
     return (
         <div className='teater-persone-swiper'>
         <Swiper
-            slidesPerView={7}
-            spaceBetween={20}
+            breakpoints={{
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                400: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                750: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                940: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                },
+                1200: {
+                    slidesPerView: 7,
+                    spaceBetween: 30,
+                }
+            }}
             scrollbar={{
                 hide: true,
               }}
@@ -34,12 +54,7 @@ function TeaterPersoneSwiper({teaterPersone}) {
                                     </div>
                                 </div>
                                 <div className='teater-p-i-name'>
-                                    <h4>{persone?.name}</h4>
-                                </div>
-                                <div className='teater-p-i-character'>
-                                    <h5>
-                                        {persone?.character}
-                                    </h5>
+                                    <h5>{persone?.name}</h5>
                                 </div>
                             </div>
                         </div>

@@ -40,7 +40,6 @@ function App() {
     const popularPersoneData = popularPersone.map((persone) => ({
       id: persone.id,
       name: persone.name,
-      // character: persone.known_for[0].title,
       popularity: Math.floor(persone.popularity),
       img: persone.profile_path
     }))
@@ -64,7 +63,6 @@ function App() {
     const teaterPersoneData = teaterPersone.map((persone) => ({
       id: persone.id,
       name: persone.name,
-      character: persone.known_for[0].title,
       popularity: Math.floor(persone.popularity),
       img: persone.profile_path
     }))

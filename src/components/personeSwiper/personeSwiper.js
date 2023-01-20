@@ -11,8 +11,28 @@ function PersoneSwiper({popularPersone}) {
     return (
         <div className='personeSwiper'>
             <Swiper
-            slidesPerView={7}
-            spaceBetween={20}
+            breakpoints={{
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                400: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                750: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                940: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                },
+                1200: {
+                    slidesPerView: 7,
+                    spaceBetween: 30,
+                }
+            }}
             scrollbar={{
                 hide: true,
               }}
@@ -34,13 +54,8 @@ function PersoneSwiper({popularPersone}) {
                                     </div>
                                 </div>
                                     <div className='persone-item-name'>
-                                        <h4>{persone?.name}</h4>
-                                    </div>
-                                    <div className='persone-item-character'>
-                                        <h5>
-                                        {persone?.character}
-                                        </h5>
-                                    </div>            
+                                        <h5>{persone?.name}</h5>
+                                    </div>          
                             </div>
                         </div>
                     </SwiperSlide>

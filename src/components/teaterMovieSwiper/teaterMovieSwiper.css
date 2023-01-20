@@ -81,3 +81,8 @@
 .teater-item-date {
     text-align: center;
 }
+@media(max-width: 390px) {
+    .teater-movieItem {
+        transform: translateX(40%);
+    }
+}

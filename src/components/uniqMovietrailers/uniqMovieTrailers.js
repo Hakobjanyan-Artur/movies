@@ -43,7 +43,17 @@ function UniqMovieTrailers({id}) {
                 </div>
             </div>
             <Swiper
-                slidesPerView={2}
+                // slidesPerView={2}
+                breakpoints={{
+                    940: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 25,
+                    }
+                }}
                 scrollbar={{
                     hide: true,
                 }}
@@ -57,7 +67,7 @@ function UniqMovieTrailers({id}) {
                                 <h2>{movies?.name}</h2>
                             </div>
                             <div className="trailer-video">
-                                <ReactPlayer controls={true} width={'500px'} height={'350px'} url={`https://www.youtube.com/watch?v=${movies?.key}`} />
+                                <ReactPlayer width={'420px'} height={'240px'} url={`https://www.youtube.com/watch?v=${movies?.key}`} />
                             </div>
                         </div>
                     </SwiperSlide>

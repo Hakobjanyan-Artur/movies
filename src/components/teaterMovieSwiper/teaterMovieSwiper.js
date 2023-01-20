@@ -11,8 +11,28 @@ function TeaterMovieSwiper({teaterMovies}) {
     return (
         <div className='teaterMovie'>
             <Swiper
-                slidesPerView={6}
-                spaceBetween={20}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    400: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    750: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    940: {
+                        slidesPerView: 4,
+                        spaceBetween: 25,
+                    },
+                    1200: {
+                        slidesPerView: 7,
+                        spaceBetween: 30,
+                    }
+                }}
                 scrollbar={{
                     hide: true,
                 }}

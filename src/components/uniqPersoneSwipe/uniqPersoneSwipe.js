@@ -32,22 +32,42 @@ function UniqPersoneSwipe({id}) {
     return(
         <div className='uniq-p-swipe'>
             <Swiper
-                slidesPerView={5}
-                spaceBetween={20}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    400: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    750: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    995: {
+                        slidesPerView: 3,
+                        spaceBetween: 25,
+                    },
+                    1200: {
+                        slidesPerView: 5,
+                        spaceBetween: 30,
+                    }
+                }}
                 scrollbar={{
                     hide: true,
                 }}
                 modules={[Scrollbar]}
-                className="mySwiper"
+                className="uniq-p-mySw"
                 >
                 {personeMovies?.map(movies => (
                     <SwiperSlide key={movies?.id}>
-                        <div onClick={() => navigate(`/personeMovies/${movies?.id}`)} className="uniq-p-container">
-                            <div className="uniq-p-pcontainer">
-                                <div className="item-p-img">
+                        <div onClick={() => navigate(`/personeMovies/${movies?.id}`)} className="uniq-p-container-Sw">
+                            <div className='uniq-p-i-Sw'>
+                                <div className="item-p-img-Sw">
                                     <img src={`https://image.tmdb.org/t/p/w200/${movies?.img}`} alt="" /> 
                                 </div>
-                                <div className="item-title">
+                                <div className="item-title-Sw">
                                     <h4>{movies?.title}</h4>
                                 </div>
                             </div>

@@ -75,3 +75,11 @@
 .translate{
     transform: scale(100%);
 }
+@media(max-width: 1140px) {
+
+}
+@media(max-width: 550px) {
+    .trailer-video {
+        transform: translateX(-60px);
+    } 
+}

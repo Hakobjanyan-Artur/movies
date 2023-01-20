@@ -53,8 +53,12 @@
 .uniq-t-p-img {
     width: 140px;
     height: 180px;
-    overflow: hidden;
     position: relative;
+}
+.uniq-t-p-img img {
+    width: 140px;
+    height: 180px;
+    border-radius: 10px;
 }
 .uniq-t-p-rating {
     width: 40px;

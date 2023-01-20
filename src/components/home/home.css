@@ -21,7 +21,7 @@
     position: relative;
 }
 .home .container .home-header .tv-teater-input .input-container .input-container-dropBack {
-    width: 110px;
+    width: 100px;
     height: 30px;
     background: var(--navColor);
     border-radius: 20px;

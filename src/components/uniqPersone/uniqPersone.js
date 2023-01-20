@@ -33,14 +33,14 @@ function UniqPersone() {
     return(
         <div className='uniq-persone'>
             <div className='container'>
-                <div className='container-left'>
-                    <div className='uniq-persone-img'>
+                <div className='uniq-p-container-left'>
+                    <div className='uniq-p-persone-img'>
                         <img src={`https://image.tmdb.org/t/p/w200/${uniqPersone?.img}`} alt="" />
                     </div>
-                    <div className='uniq-persone-img-title'>
+                    <div className='uniq-p-img-title'>
                         <h2>Personal Info</h2>
                     </div>
-                    <div className='uniq-persone-info'>
+                    <div className='uniq-p-info'>
                         <h3>Known For</h3>
                         <h5>{uniqPersone?.knofFor}</h5>
                         <h3>Credits</h3>
@@ -51,16 +51,16 @@ function UniqPersone() {
                         <h5>{uniqPersone?.birthday}</h5>
                     </div>
                 </div>
-                <div className='container-right'>
-                        <div className='persone-name'>
+                <div className='uniq-p-container-right'>
+                        <div className='uniq-p-persone-name'>
                             <h1>{uniqPersone?.name}</h1>
                         </div>
-                        <div className='pesone-biography'>
+                        <div className='uniq-p-pesone-biography'>
                             <h2>Biography</h2>
                             <p>{uniqPersone?.biography}</p>
                         </div>
-                        <div className='uniq-persone-swipe'>
-                            <div className='persone-swipe-title'>
+                        <div className='uniq-p-persone-swipe'>
+                            <div className='uniq-p-persone-swipe-title'>
                                 <h2>Known For</h2>
                             </div>
                             <UniqPersoneSwipe id={id} />

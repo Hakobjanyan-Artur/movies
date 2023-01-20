@@ -4,6 +4,7 @@ import './movieSwipper.css'
 import "swiper/css";
 import "swiper/css/scrollbar";
 import { useNavigate } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function MovieSwipper({popularMovies, setMoviesId}) {
@@ -12,8 +13,28 @@ function MovieSwipper({popularMovies, setMoviesId}) {
     return (
         <div className='movieSwipper'>
         <Swiper
-            slidesPerView={6}
-            spaceBetween={20}
+            breakpoints={{
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                400: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                750: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                940: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                },
+                1200: {
+                    slidesPerView: 6,
+                    spaceBetween: 30,
+                }
+            }}
             scrollbar={{
                 hide: true,
               }}
